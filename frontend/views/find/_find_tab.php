@@ -1,0 +1,1 @@
+<br><div class="col-xs-12">    <?= (isset($title) and !empty($title)) ? "<h3>$title</h3>" : null ?>    <?= $content ?></div>

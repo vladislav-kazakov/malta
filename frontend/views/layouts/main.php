@@ -43,9 +43,9 @@ AppAsset::register($this);
     ?>
 
     <?php
-    $menuType = (new TypeMenu)->run([]);
-
-    $menuItems = array_merge($menuItems, $menuType);
+    if ($menuType = (new TypeMenu)->run([])) {
+        $menuItems = array_merge($menuItems, $menuType);
+    }
     ?>
 
 
@@ -72,10 +72,10 @@ AppAsset::register($this);
 
     <?php
     $menuLang = (new Lang)->run([
-            'widget_type' => 'classic', // classic or selector
-            'image_type' => 'rounded', // classic or rounded
-            'width' => '18',
-        ]);
+        'widget_type' => 'classic', // classic or selector
+        'image_type' => 'rounded', // classic or rounded
+        'width' => '18',
+    ]);
 
     $menuItems = array_merge($menuItems, $menuLang);
     ?>

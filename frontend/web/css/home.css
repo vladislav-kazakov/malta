@@ -1,14 +1,14 @@
 .banner {
   margin-top: -20px;
-  min-height: 400px;
   padding: 30px 0;
   margin-bottom: 40px;
-  background: linear-gradient(45deg, #EECFBA, #C5DDE8);
-  color: #fff; }
+  color: #fff;
+  background: url("../img/bg01.jpg") no-repeat center right;
+  background-size: cover; }
   .banner .plate {
+    background-color: rgba(0, 0, 0, 0.3);
     max-width: 600px;
-    padding-right: 40px;
-    color: #434343; }
+    padding: 30px; }
     .banner .plate h1 {
       font-size: 44px; }
     .banner .plate p {

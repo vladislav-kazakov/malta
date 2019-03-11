@@ -33,3 +33,6 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
+
+# scss cache
+frontend/web/css/.sass-cache

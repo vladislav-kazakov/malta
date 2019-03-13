@@ -6,7 +6,7 @@
   background: url("../img/bg01.jpg") no-repeat center right;
   background-size: cover; }
   .banner .plate {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
     max-width: 600px;
     padding: 30px; }
     .banner .plate h1 {

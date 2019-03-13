@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 
 
-$this->registerCssFile('css/home.css?201902172259', ['depends' => ['yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerCssFile('css/home.css?201903131429', ['depends' => ['yii\bootstrap\BootstrapPluginAsset']]);
 
 $this->title = Yii::$app->name;
 ?>

@@ -200,8 +200,10 @@ class Find extends ActiveRecord
 
             $sizes = getimagesize($path . '/' . $newName . '.' . $this->fileImage->extension);
             if ($sizes[0] > self::THUMBNAIL_W) {
-                Image::thumbnail($path . '/' . $newName . '.' . $this->fileImage->extension, self::THUMBNAIL_W, self::THUMBNAIL_H)
-                    ->resize(new Box(self::THUMBNAIL_W, self::THUMBNAIL_H))
+                $width = self::THUMBNAIL_W;
+                $height = $width * $sizes[1] / $sizes[0];
+                Image::thumbnail($path . '/' . $newName . '.' . $this->fileImage->extension, $width, $height)
+                    ->resize(new Box($width, $height))
                     ->save($path . '/' . self::THUMBNAIL_PREFIX . $newName . '.' . $this->fileImage->extension, ['quality' => 80]);
             }
 

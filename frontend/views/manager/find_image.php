@@ -8,6 +8,7 @@
 use common\models\FindImage;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
+use yii\grid\GridView;
 
 $this->title = 'Дополнительные изображения';
 $this->params['breadcrumbs'] = [
@@ -36,23 +37,47 @@ $this->params['breadcrumbs'] = [
 
 
 <div class="clearfix"></div>
-<?php if (!empty($model->images)): ?>
-    <div class="row">
-        <?php foreach ($model->images as $item): ?>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div style="position: relative">
-                    <?= Html::a('Удалить', ['manager/image-delete', 'id' => $item->id], [
-                        'class' => 'btn btn-danger',
-                        'style' => 'position: absolute; right: 5px; top: 5px;',
-                        'data' => [
-                            'confirm' => 'Вы уверены, что хотите удалить?',
-                            'method' => 'post',
-                        ]
-                    ]) ?>
-                    <?= Html::img(FindImage::SRC_IMAGE . '/' . FindImage::THUMBNAIL_PREFIX . $item->image, ['class' => 'img-responsive img-thumbnail']) ?>
-                    <br>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-<?php endif; ?>
+
+<?= GridView::widget([
+    'dataProvider' => $provider,
+    'columns' => [
+        [
+            'attribute' => 'image',
+            'format' => 'html',
+            'options' => ['style' => 'width: 100px;'],
+            'value' => function ($model) {
+                return empty($model->image) ? null : Html::img(FindImage::SRC_IMAGE . '/' . FindImage::THUMBNAIL_PREFIX . $model->image, ['class' => 'img-responsive img-thumbnail']);
+            }
+        ],
+        [
+            'attribute' => 'description',
+            'format' => 'html',
+        ],
+        [
+            'class' => 'backend\grid\ActionColumn',
+            'options' => ['style' => 'width: 100px;'],
+            'buttons' => [
+                'view' => function ($url, $model) {
+                    return \yii\helpers\Html::a(
+                        '<span class="fas fa-eye"></span>',
+                        FindImage::SRC_IMAGE . '/' . $model->image);
+                },
+                'update' => function ($url, $model) {
+                    return \yii\helpers\Html::a(
+                        '<span class="fas fa-edit"></span>',
+                        ['manager/image-update', 'id' => $model->id]);
+                },
+                'delete' => function ($url, $model) {
+                    return \yii\helpers\Html::a(
+                        '<span class="fas fa-trash"></span>',
+                        ['manager/image-delete', 'id' => $model->id],
+                        [
+                            'data-pjax' => "0",
+                            'data-confirm' => "Вы уверены, что хотите удалить этот элемент?",
+                            'data-method' => "post"
+                        ]);
+                }
+            ],
+        ],
+    ],
+]) ?>

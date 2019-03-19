@@ -18,13 +18,25 @@ $this->params['breadcrumbs'] = [
     $this->title,
 ];
 $script = <<< JS
-        
-     $('[data-toggle="tooltip"]').tooltip();
+    // function htmlDecode(input){
+    //     var e = document.createElement('div');
+    //     e.innerHTML = input;
+    //     return e.childNodes[0].nodeValue;
+    // }
     
-    $(".tab-header")
-    .click(function() {
-        $(this).tooltip('hide');
-    })
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+        // $("a[rel=findImages]").fancybox({
+        //     beforeShow : function() {
+        //         this.title = this.title != '' ? htmlDecode(this.title) : '';
+        //     }
+        // });
+        
+        $(".tab-header")
+        .click(function() {
+            $(this).tooltip('hide');
+        });        
+    });
 
 JS;
 
@@ -272,7 +284,8 @@ if (!empty($find->publication)) {
             <?= Html::a(Html::img(Find::SRC_IMAGE . '/' . $find->thumbnailImage, [
                 'class' => 'img-responsive'
             ]), Find::SRC_IMAGE . '/' . $find->image, [
-                'rel' => 'findImages'
+                'rel' => 'findImages',
+                'title' => $find->name,
             ]); ?>
         <?php else: ?>
             <?= $find->three_d ?>
@@ -308,9 +321,9 @@ if (!empty($find->publication)) {
             <div class="col-xs-6 col-sm-4 col-md-3">
                 <div class="image">
                     <?= Html::a(Html::img(Find::SRC_IMAGE . '/' . $find->thumbnailImage, [
-                        'class' => 'img-responsive'
+                        'class' => 'img-responsive',
                     ]), Find::SRC_IMAGE . '/' . $find->image, [
-                        'rel' => 'findImages'
+                        'rel' => 'findImages',
                     ]); ?>
                 </div>
             </div>
@@ -322,7 +335,8 @@ if (!empty($find->publication)) {
                         <?= Html::a(Html::img(FindImage::SRC_IMAGE . '/' . FindImage::THUMBNAIL_PREFIX . $item->image, [
                             'class' => 'img-responsive img-thumbnail'
                         ]), FindImage::SRC_IMAGE . '/' . $item->image, [
-                            'rel' => 'findImages'
+                            'rel' => 'findImages',
+                            'title' => $item->description,
                         ]); ?>
                     </div>
                 </div>

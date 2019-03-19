@@ -7,6 +7,7 @@ use common\models\FindImage;
 use common\models\Type;
 use common\models\Category;
 use common\models\Find;
+use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
@@ -333,6 +334,13 @@ class ManagerController extends Controller
     public function actionFindImage($id)
     {
         $model = Find::find()->multilingual()->where(['id' => $id])->one();
+        $query = FindImage::find()->where(['find_id' => $id]);
+        $provider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 12,
+            ],
+        ]);
 
         if (empty($model)) {
             throw new HttpException(500);
@@ -349,6 +357,37 @@ class ManagerController extends Controller
         }
 
         return $this->render('find_image', [
+            'model' => $model,
+            'provider' => $provider,
+        ]);
+    }
+
+    /**
+     * @param $id
+     * @return \yii\web\Response
+     * @throws HttpException
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
+    public function actionImageUpdate($id)
+    {
+        $model = FindImage::findOne($id);
+
+        if (empty($model)) {
+            throw new HttpException(500);
+        }
+
+
+        if ($model->load(\Yii::$app->request->post())) {
+            if ($model->save()) {
+                \Yii::$app->session->setFlash('success', "Данные внесены");
+                return $this->redirect(['manager/find-image', 'id' => $model->find->id]);
+            }
+
+            \Yii::$app->session->setFlash('error', "Не удалось сохранить изменения<br>" . print_r($model->errors, true));
+        }
+
+        return $this->render('image_update', [
             'model' => $model,
         ]);
     }
@@ -446,7 +485,7 @@ class ManagerController extends Controller
             if ($model->position != $oldPosition and !empty($model->position)) {
                 $reposition = true;
                 $model->position = $model->position > $maxPosition ? $maxPosition : $model->position;
-            } elseif(empty($model->position)) {
+            } elseif (empty($model->position)) {
                 $model->position = $maxPosition + 1;
             }
 

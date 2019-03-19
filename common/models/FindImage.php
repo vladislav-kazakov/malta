@@ -37,7 +37,7 @@ class FindImage extends ActiveRecord
     {
         return [
             [['find_id', 'image'], 'required'],
-            [['image'], 'string'],
+            [['image', 'description'], 'string'],
             [['find_id'], 'exist', 'skipOnError' => true, 'targetClass' => Find::className(), 'targetAttribute' => ['find_id' => 'id']],
         ];
     }
@@ -48,6 +48,18 @@ class FindImage extends ActiveRecord
     public function getFind()
     {
         return $this->hasOne(Find::className(), ['id' => 'find_id']);
+    }
+
+    /**
+     * label attr
+     *
+     * @return array
+     */
+    public function attributeLabels()
+    {
+        return [
+            'description' => 'Описание'
+        ];
     }
 
     /**

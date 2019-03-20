@@ -63,6 +63,9 @@ return [
                 ],
             ],
         ],
+        'opengraph' => [
+            'class' => 'fgh151\opengraph\OpenGraph',
+        ],
     ],
     'params' => $params,
     'language' => 'en',

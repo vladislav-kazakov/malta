@@ -1,14 +1,14 @@
 <?php
+
 namespace frontend\controllers;
 
 use common\models\Type;
-use yii\web\Controller;
 
 /**
  * Class TypeController
  * @package frontend\controllers
  */
-class TypeController extends Controller
+class TypeController extends BaseController
 {
 
     /**
@@ -32,6 +32,11 @@ class TypeController extends Controller
         if (empty($type)) {
             throw new HttpException(404);
         }
+
+        self::openGraph([
+            'title' => $type->name,
+            'description' => strip_tags($type->annotation),
+        ]);
 
         return $this->render('view', [
             'type' => $type,

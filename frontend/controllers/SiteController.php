@@ -7,7 +7,6 @@ use common\models\Category;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
-use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
@@ -17,10 +16,10 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 
 /**
- * Class DefaultController
+ * Class SiteController
  * @package frontend\controllers
  */
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     /**
      * {@inheritdoc}

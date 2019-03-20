@@ -2,13 +2,12 @@
 namespace frontend\controllers;
 
 use common\models\Find;
-use yii\web\Controller;
 
 /**
  * Class FindController
  * @package frontend\controllers
  */
-class FindController extends Controller
+class FindController extends BaseController
 {
 
     /**
@@ -32,6 +31,12 @@ class FindController extends Controller
         if (empty($find)) {
             throw new HttpException(404);
         }
+
+        self::openGraph([
+            'title' => $find->name,
+            'description' => strip_tags($find->annotation),
+            'image' => !empty($find->image) ? Find::SRC_IMAGE . '/' . $find->thumbnailImage : null,
+        ]);
 
         return $this->render('view', [
             'find' => $find,

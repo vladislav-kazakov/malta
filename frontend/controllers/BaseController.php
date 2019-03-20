@@ -28,6 +28,6 @@ class BaseController extends Controller
     protected function openGraph($params = []){
         Yii::$app->opengraph->title = isset($params['title']) ? $params['title'] : Yii::t('app', 'Art of Mal\'ta');
         Yii::$app->opengraph->description = isset($params['description']) ? $params['description'] : Yii::t('app', 'Information system of Mal\'ta culture Mobile Art');
-        Yii::$app->opengraph->image = Yii::$app->urlManager->getHostInfo() . '/' . (isset($params['image']) ? $params['image'] : 'img/opengraph.jpg');
+        Yii::$app->opengraph->image = Yii::$app->urlManager->getHostInfo() . (isset($params['image']) ? $params['image'] : '/img/opengraph.jpg');
     }
 }

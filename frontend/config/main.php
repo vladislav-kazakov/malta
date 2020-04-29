@@ -69,5 +69,5 @@ return [
     ],
     'params' => $params,
     'language' => 'en',
-    'name' => 'Malta',
+    'name' => 'Art of Mal\'ta',
 ];

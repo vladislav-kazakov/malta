@@ -22,7 +22,7 @@ $this->title = Yii::$app->name;
             <?= Yii::t('home', 'Okladnikov A.P. discovered four dwellings of various configurations with the unique floor mounts made of antler, pillars of mammoth thigh-bones, wall mounts of limestone blocks and rhino skulls. Stone tools are close to the Mal’ta complex in technological characteristics. These are: tips, scrapers on blades, burins, side-scrapers, prismatic cores and blades, choppers (quartzite). The items made of bone, antler and ivory include rods, awls, borers, ivory hook, sculpture (17 pcs). Buret’ collection has the items which gained a great popularity. These are anthropomorphic and zoomorphic figurines, and also the items of personal ornamentation (beads, pendants, discs with holes).') ?>
         </p>
         <p>
-            <?= Yii::t('home', 'The Buret’ inventory complex has a number of similar features in the manufacturing of stone and bone tools, as well as stylistically homogeneous sculptures with the complex of “classical” Malta. Thus, Buret’ collection is one of the main component of the specific Mal’ta-Buret’ culture.') ?>
+            <?= Yii::t('home', 'The Buret’ inventory complex has a number of similar features in the manufacturing of stone and bone tools, as well as stylistically homogeneous sculptures with the complex of “classical” Mal’ta. Thus, Buret’ collection is one of the main component of the specific Mal’ta-Buret’ culture.') ?>
         </p>
     </div>
 

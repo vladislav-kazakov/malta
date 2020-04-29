@@ -82,6 +82,15 @@ class SiteController extends BaseController
         ]);
     }
 
+    public function actionBndex()
+    {
+        $bannerImages = BannerImage::find()->orderBy(['position' => SORT_ASC])->all();
+
+        return $this->render('bndex', [
+            'bannerImages' => $bannerImages,
+        ]);
+    }
+
     /**
      * Logs in a user.
      *

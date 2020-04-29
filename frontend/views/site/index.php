@@ -13,22 +13,22 @@ $this->title = Yii::$app->name;
 <div class="row">
     <div class="col-xs-12">
         <p>
-            <?= Yii::t('home', 'Mal’ta is a multi-layered geoarchaeological object of the Upper Paleolithic, it located on the left bank of the Belaya River, on the upper edge of Mal’ta village (Usolskiy District, Irkutsk Region).') ?>
+            <?= Yii::t('home', 'Mal’ta site is an Upper Paleolithic multilayer geoarchaeological object. It is situated on the left side of the river Belaya, near the Mal’ta village of Usolski district, Irkutsk region.') ?>
         </p>
         <p>
-            <?= Yii::t('home', 'The archaeological site was opened in 1928 by M. M. Gerasimov. In the period from 1928 to 1958 years, cyclical investigations continued, during which ten field seasons were conducted under the leader by M. M. Gerasimov. An excavation area included of 1,427 m2; at least 15 dwellings (semi-dwelling sheds, summer dwellings such as plague), children\'s burial with rich accompanying equipment, dump sites, work sites, an intermediate zone with a minimum number of finds, and it was defined as a settlement.') ?>
+            <?= Yii::t('home', 'The site was discovered in 1928 by M.M. Gerasimov. The research included ten field seasons and last during 1928-1958 under the direction of M.M. Gerasimov. The excavation area was 1427 square meters. It includes a complex of habitation sites consists of no less 15 dwellings, one child’s burial with rich inventory, landfill sites, work sites, an intermediate zone with a minimum of finds.') ?>
         </p>
         <p>
-            <?= Yii::t('home', 'Malta was perceived as a single-layer archaeological site, and was identified as a short-term hunting camp. The main inventory of the "classical" Mal’ta amounted to several thousand finds, of which more than 850 are unique products of human culture.') ?>
+            <?= Yii::t('home', 'Mal’ta considered as a single-layer site and was determined as a short-term hunter’s site. The basic inventory complex of “classic” Mal’ta contains several thousands of finds. Among them, 850 are unique items of prehistoric art.') ?>
         </p>
         <p>
-            <?= Yii::t('home', 'The modern cycle of research of Mal’ta-site by specialists from the Irkutsk State University begins in 1981 under the leader G.I. Medvedev, and continues to the present. In the course of large-scale field work with the involvement of researchers of natural sciences, the results were obtained, which allowed locating as a complex geoarcheological multi-layered object, where 14 levels of deposits of cultural residues dating from 43,000 to 12,000 years BP were identified. “Classical” Mal’ta, dating back from 23,000 to 18,000 years ago, occupies a position of 8 and 9 lithology units in the modern geological section scale.') ?>
+            <?= Yii::t('home', 'The modern stage of Mal’ta research started in 1981 under the direction of G.I. Medvedev and continues to this day. During the large field work with the involvement of natural sciences researchers, the scientists got the results that helps to determine the site as a complex geoarchaeological multilayer object with 14 levels of cultural deposits dates from 43 000 to 12 000. “Classic” Mal’ta collection dates from 23 000 to 18 000 and relates to 8 and 9 lithological units.') ?>
         </p>
         <p>
-            <?= Yii::t('home', 'The total number of artifacts recorded to date is more than 13,000 finds. Among the stone tools numerous blades, points, scrapers, prismatic nucleares. A variety of products from the antler, bones and ivory: rods, awl, needles, handle tools. Anthropomorphic and ornithomorphic sculptural images, plaques made from mammoth ivory, and personal ornamentation items (pendants, lines, beads, bracelets, tiaras) became especially famous in the World.') ?>
+            <?= Yii::t('home', 'General number of artefacts is more than 13 000 finds. Among the stone tools, there are many blades, tips, scrapers, prismatic blades. Also, the site gives us a huge variety of ivory, bone and antler items: rods, awls, needles and handles. There is also a collection of items that gained a particular fame. These are the anthropomorphic and zoomorphic figurines, ivory plates and rondelles and the items of personal ornament (pendants, beads, bracelets and diadems).') ?>
         </p>
         <p>
-            <?= Yii::t('home', 'Mal’ta, together with the Buret’ Paleolithic site, discovered in 1936 by A.P. Okladnikov, has a number of similar features in the production of stone and bone implements, as well as stylistically homogeneous anthropomorphic and ornithomorphic figurines, forms a specific Mal’ta-Buret’ archaeological culture.') ?>
+            <?= Yii::t('home', 'Mal’ta and Buret’ – the other paleolithic site – have a number of similar features in the manufacturing of stone and bone tools and stylistically similar anthropomorphic and zoomorphic figurines. Thus, they form a special Mal’ta-Buret’ culture.') ?>
         </p>
     </div>
 

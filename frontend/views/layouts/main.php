@@ -23,7 +23,7 @@ AppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?= Html::encode(Yii::t('app', $this->title)) ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -32,7 +32,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => Yii::t('app', 'Mal\'ta'),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse',
@@ -43,6 +43,9 @@ AppAsset::register($this);
     ?>
 
     <?php
+
+    $menuItems[] = ['label' => Yii::t('app', 'Buret\''), 'url' => ['site/bndex']];
+
     if ($menuType = (new TypeMenu)->run([])) {
         $menuItems = array_merge($menuItems, $menuType);
     }

@@ -32,7 +32,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => Yii::t('app', 'Mal\'ta'),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse',
@@ -43,6 +43,9 @@ AppAsset::register($this);
     ?>
 
     <?php
+
+    $menuItems[] = ['label' => Yii::t('app', 'Buret\''), 'url' => ['site/bndex']];
+
     if ($menuType = (new TypeMenu)->run([])) {
         $menuItems = array_merge($menuItems, $menuType);
     }
